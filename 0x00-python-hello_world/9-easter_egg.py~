@@ -1,0 +1,7 @@
+#!/bin/python3
+print("hello word"
+      "how are you doing")
+print("hello word"
+            "how are you doing")
+print("hello word"
+            "how are you doing")
