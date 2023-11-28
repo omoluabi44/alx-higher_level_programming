@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 def uppercase(str):
     is_upper = ""
     for i in (str):
