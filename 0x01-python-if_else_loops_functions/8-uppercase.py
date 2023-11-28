@@ -11,4 +11,4 @@ def uppercase(str):
             is_upper += " "
         else:
             is_upper = is_upper + chr(convert_digit)
-    print(is_upper)
+    print("{}".format(is_upper))
