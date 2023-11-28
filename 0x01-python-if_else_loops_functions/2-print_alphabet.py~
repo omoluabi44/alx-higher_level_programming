@@ -1,0 +1,5 @@
+#!/usr/bin/python3
+
+while 97 <= 122:
+    print(chr(97),end="")
+    int(97)+=1
