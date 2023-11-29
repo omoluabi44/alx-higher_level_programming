@@ -1,0 +1,11 @@
+# Import the py_compile module
+import py_compile
+
+# Define the name of the source file
+source_file = "hello.py"
+
+# Compile the source file and create a .pyc file
+py_compile.compile(source_file)
+
+# Print a message to indicate success
+print(f"{source_file} compiled successfully.")
