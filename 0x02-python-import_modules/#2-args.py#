@@ -2,12 +2,12 @@
 import sys
 
 if __name__ == "__main__":
-    sys.argv[0] = "argument"
+    sys.argv[0] = "arguement"
     total_argv = 1
     n = len(sys.argv)
     b = len(sys.argv) - 1
     if b == 0:
-        print("{} {}s.".format(b, sys.argv[0]))
+        print("0 arguements.")
     elif b == 1:
         print("{} {}.".format(b, sys.argv[0]))
     else:
