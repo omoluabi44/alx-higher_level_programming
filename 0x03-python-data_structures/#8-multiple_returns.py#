@@ -1,9 +1,0 @@
-#!/
-def multiple_returns(sentence):
-        tup_1 =()
-
-            if len(sentence) == 0:
-                        tup_1 =  "None"
-                            tup_1 = len(sentence),sentence[0]
-                                return tup_1
-                                #print(type(tup1))
