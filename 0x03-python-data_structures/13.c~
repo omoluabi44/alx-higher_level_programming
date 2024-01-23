@@ -1,0 +1,65 @@
+#include "lists.h"
+
+/**
+ * is_palindrome - checks if a singly linked list is a palindrome
+ * @head: the head of the list
+ * Return: 1 if palindromic, 0 otherwise
+ */
+int is_palindrome(listint_t **head)
+{
+	listint_t *second_List;
+	listint_t *fast_ptr = *head;
+	listint_t *slow_ptr = *head;
+
+	if (*head == NULL || head == NULL)
+		return 1;  // Empty or single-node list is a palindrome
+
+	while (1)
+	{
+		fast_ptr = fast_ptr->next;  // Advance fast_ptr by one node
+		if (fast_ptr == NULL || fast_ptr->next == NULL)
+		{
+			second_List = slow_ptr->next;  // Handle both even and odd lists
+			break;
+		}
+		fast_ptr = fast_ptr->next;  // Advance fast_ptr by another node for even-length lists
+		slow_ptr = slow_ptr->next;
+	}
+
+	slow_ptr->next = NULL;  // Terminate the first half
+	second_List = reversed(second_List);  // Reverse the second half
+
+	while (*head != NULL && second_List != NULL)
+	{
+		if ((*head)->n != second_List->n)
+			return 0;
+
+		*head = (*head)->next;
+		second_List = second_List->next;
+	}
+
+	return 1;
+}
+
+/**
+ * reversed - reverses a singly linked list
+ * @head: the head of the list
+ * Return: the new head of the reversed list
+ */
+listint_t *reversed(listint_t **head)
+{
+	listint_t *prev = NULL;
+	listint_t *next_one;
+	listint_t *current = *head;
+
+	while (current != NULL)
+	{
+		next_one = current->next;
+		current->next = prev;
+		prev = current;
+		current = next_one;
+	}
+
+	*head = prev;  // Update the original head pointer
+	return *head;
+}
