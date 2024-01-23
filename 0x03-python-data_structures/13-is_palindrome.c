@@ -1,62 +1,71 @@
 #include "lists.h"
-/**
- *is_palindrome - this check for palindrome in a singly linked list
- *@head: the param received
- *Return: true if is palindrom and return false if not
- */
-void reversed(listint_t **head);
 
+/**
+ * reverse_listint - reverses a linked list
+ * @head: pointer to the first node in the list
+ * Return: pointer to the first node in the new list
+ */
+void reverse_listint(listint_t **head)
+{
+	listint_t *prev = NULL;
+	listint_t *current = *head;
+	listint_t *next = NULL;
+
+	while (current)
+	{
+		next = current->next;
+		current->next = prev;
+		prev = current;
+		current = next;
+	}
+
+	*head = prev;
+}
+
+/**
+ * is_palindrome - checks if a linked list is a palindrome
+ * @head: double pointer to the linked list
+ *
+ * Return: 1 if it is, 0 if not
+ */
 int is_palindrome(listint_t **head)
 {
-	listint_t *second_List = NULL;
-	listint_t *fast_ptr = *head;
-	listint_t*slow_ptr = *head;
-	/**listint_t *temp = *head*/
+	listint_t *slow = *head, *fast = *head, *temp = *head, *dup = NULL;
 
 	if (*head == NULL || (*head)->next == NULL)
 		return (1);
+
 	while (1)
 	{
-		fast_ptr = fast_ptr->next->next;
-		if (fast_ptr->next == NULL)
+		fast = fast->next->next;
+		if (!fast)
 		{
-			second_List = slow_ptr->next->next;
+			dup = slow->next;
 			break;
 		}
-		if (fast_ptr == NULL)
+		if (!fast->next)
 		{
-			second_List = slow_ptr->next;
+			dup = slow->next->next;
 			break;
 		}
-		slow_ptr = slow_ptr->next;
+		slow = slow->next;
 	}
-        /**slow_ptr->next = NULL;*/
-	reversed(&second_List);
 
-	while (*head != NULL && second_List != NULL)
+	reverse_listint(&dup);
+
+	while (dup && temp)
 	{
-		if ((*head)->n != second_List->n)
+		if (temp->n == dup->n)
+		{
+			dup = dup->next;
+			temp = temp->next;
+		}
+		else
 			return (0);
-
-		*head = (*head)->next;
-		second_List = second_List->next;
 	}
 
-	return (1);
-}
+	if (!dup)
+		return (1);
 
-void reversed(listint_t **head)
-{
-	listint_t  *prev = NULL;
-	listint_t *next_one = NULL;
-	listint_t *current = *head;
-
-	while ( current != NULL)
-	{
-		next_one = current->next;
-		current->next = prev;
-		prev = current;
-		current = next_one;
-	}
-	*head = prev;
+	return (0);
 }
