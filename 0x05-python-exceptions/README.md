@@ -22,3 +22,5 @@
 Write a function that prints x elements of a list.
 ###TASK 1
 Write a function that prints an integer with "{:d}".format().
+###TASK 2
+Write a function that prints the first x elements of a list and only integers.
