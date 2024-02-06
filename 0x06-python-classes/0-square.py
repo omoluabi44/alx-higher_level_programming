@@ -1,7 +1,11 @@
 #!/usr/bin/python3
 
-"""Define a class Square."""
+
+""" a class the does nothing """
+
 
 class Square:
-       """Represent a square."""
-       pass
+
+    """ does nothing but return square"""
+
+    pass
