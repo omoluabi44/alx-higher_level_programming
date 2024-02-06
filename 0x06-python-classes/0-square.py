@@ -1,13 +1,7 @@
 #!/usr/bin/python3
-""" define a class squere """
+
+""" define a class squere. """
+
 class Square:
-       """
-    Represents a square.
-
-    Attributes:
-        None
-
-    Methods:
-        None
-    """
+       """ Represents a square."""
     pass
