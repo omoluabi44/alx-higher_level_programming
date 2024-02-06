@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
-""" define a class squere. """
+"""Define a class Square."""
 
 class Square:
-       """ Represents a square."""
-    pass
+       """Represent a square."""
+       pass
