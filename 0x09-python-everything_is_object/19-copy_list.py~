@@ -1,0 +1,4 @@
+#!/usr/bin/python
+def copy_list(l):
+   return a = l[:]
+    #return a
