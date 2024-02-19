@@ -1,0 +1,15 @@
+#!/usr/bin/python3
+""" print list in ascending
+order
+"""
+
+class MyList(list):
+    """
+    class that inherited from List
+    """
+    def print_sorted(self):
+        """
+        print list in ascending order
+        """
+        sorted_list = sorted(self)
+        print(sorted_list)
