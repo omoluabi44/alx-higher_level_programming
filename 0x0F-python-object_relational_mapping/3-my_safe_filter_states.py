@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-
+"""protect against sql injection"""
 import sys
 import MySQLdb
 
