@@ -7,6 +7,6 @@ if (argLine) {
   if (isNaN(intFromStr)) {
     console.log('Not a Number');
   } else {
-    console.log(intFromStr);
+    console.log('My number: ' + intFromStr);
   }
 }
