@@ -16,10 +16,8 @@ if __name__ == "__main__":
         passwd=usrpsw,
         db=dbnm)
     cur = db.cursor()
-    query = "SELECT * FROM states WHERE\
-            name = %s ORDER BY id ASC"
-    cur.execute(query, (stnm,))
-
+    cur.execute("SELECT * FROM states WHERE name LIKE BINARY '{}'"
+                .format(stnm))
     row = cur.fetchall()
 
     for i in row:
