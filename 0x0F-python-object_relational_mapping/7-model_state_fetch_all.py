@@ -10,10 +10,9 @@ if __name__ == "__main__":
     usrpsw = sys.argv[2]
     dbnm = sys.argv[3]
 
-    connection_string = f'mysql+mysqldb://{usrnm}:\
-    {usrpsw}@localhost:3306/{dbnm}'
-
-    engine = create_engine(connection_string, echo=True)
+    connection_string = 'mysql+mysqldb://{}:{}@localhost:3306/{}'\
+        .format(usrnm, usrpsw, dbnm)
+    engine = create_engine(connection_string)
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
