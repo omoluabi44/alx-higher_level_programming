@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# get x-resquest id
+''' get x-resquest id'''
 
 import urllib.request
 import sys
