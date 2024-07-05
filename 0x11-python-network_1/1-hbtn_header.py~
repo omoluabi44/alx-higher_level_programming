@@ -1,0 +1,13 @@
+#!/usr/bin/python3
+# get x-resquest id
+
+import urllib.request
+import sys
+
+url = sys.argv[1]
+with urllib.request.urlopen(url) as response:
+    html = response.getheaders()
+    id = dict(html).get("X-Request-Id")
+
+
+print(f"\t- content: {id}")
